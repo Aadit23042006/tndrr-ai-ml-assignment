@@ -72,7 +72,7 @@ def fmt_md(text):
     """Tiny markdown subset -> reportlab paragraph markup."""
     t = escape(text)
     t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
-    t = re.sub(r"`(.+?)`", r"<font face='Mono'>\1</font>", t)
+    t = re.sub(r"`(.+?)`", r"<font face='Courier'>\1</font>", t)
     return t.replace("\n", "<br/>")
 
 
