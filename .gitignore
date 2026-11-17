@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# big / re-downloadable
+# keep results/*.json, train_summary.json, questions.json etc. - the report needs them

@@ -1,0 +1,252 @@
+{
+  "smoke_test": false,
+  "hardware": {
+    "gpu": "Tesla T4",
+    "note": "fill in CPU/RAM/Colab type in the report"
+  },
+  "settings": [
+    {
+      "model": "qwen2.5:1.5b-instruct-fp16",
+      "load_seconds": 64.681642495,
+      "mean_tokens_per_s": 62.2307205620276,
+      "median_tokens_per_s": 62.052014163703674,
+      "min_tokens_per_s": 57.36454050476635,
+      "max_tokens_per_s": 71.00711125154653,
+      "total_generated_tokens": 742,
+      "auto_checks_passed": 6,
+      "auto_checks_total": 7,
+      "memory": {
+        "ollama_ps_total_gb": 3.21618182,
+        "ollama_ps_vram_gb": 3.21618182,
+        "nvidia_smi_delta_mib": 3202.0,
+        "ollama_rss_mib": 38.97265625
+      },
+      "num_ctx": 2048,
+      "num_predict": 200,
+      "prompts": [
+        {
+          "id": 1,
+          "prompt": "What is 17 * 23? Answer with just the number.",
+          "output": "391",
+          "eval_count": 4,
+          "tokens_per_s": 71.00711125154653,
+          "prompt_eval_count": 45,
+          "prompt_tokens_per_s": 2657.8465536589683,
+          "check_passed": true
+        },
+        {
+          "id": 2,
+          "prompt": "What is the capital of Australia? Answer in one word.",
+          "output": "Canberra",
+          "eval_count": 3,
+          "tokens_per_s": 64.67255579883465,
+          "prompt_eval_count": 41,
+          "prompt_tokens_per_s": 1792.976778764158,
+          "check_passed": true
+        },
+        {
+          "id": 3,
+          "prompt": "Write a Python function is_prime(n) that returns True if n is a prime number.",
+          "output": "Certainly! Here's a Python function that checks if a given number `n` is a prime number:\n\n```python\ndef is_prime(n):\n    \"\"\"\n    Check if a number n is a prime number.\n    \n    Parameters:\n    n (int): The number to check.\n    \n    Returns:\n    bool: True if n is a prime number, False otherwise.\n    \"\"\"\n    if n <= 1:\n        return False\n    if n <= 3:\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example usage:\nprint(is_prime(29))  # Output: True\nprint(is_prime(10))  # Output: False\n``",
+          "eval_count": 200,
+          "tokens_per_s": 61.119676518924095,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 2993.630573248408,
+          "check_passed": true
+        },
+        {
+          "id": 4,
+          "prompt": "Translate to French: 'Where is the railway station?'",
+          "output": "O\u00f9 est la gare?",
+          "eval_count": 8,
+          "tokens_per_s": 57.36454050476635,
+          "prompt_eval_count": 40,
+          "prompt_tokens_per_s": 2118.98077024951,
+          "check_passed": true
+        },
+        {
+          "id": 5,
+          "prompt": "Summarize in one sentence: The Moon orbits the Earth roughly every 27 days, and its gravity causes the ocean tides. Because the Moon is slowly moving away from Earth, days are gradually getting longer.",
+          "output": "The Moon's gravitational pull causes ocean tides, and its gradual movement away from Earth is causing days to lengthen over time.",
+          "eval_count": 27,
+          "tokens_per_s": 63.09717263729864,
+          "prompt_eval_count": 73,
+          "prompt_tokens_per_s": 4474.684320215766,
+          "check_passed": null
+        },
+        {
+          "id": 6,
+          "prompt": "Return a JSON object with the keys \"name\" and \"age\" for a person called Asha who is 30. Output only the JSON.",
+          "output": "```json\n{\n  \"name\": \"Asha\",\n  \"age\": 30\n}\n```",
+          "eval_count": 23,
+          "tokens_per_s": 63.52904574696311,
+          "prompt_eval_count": 60,
+          "prompt_tokens_per_s": 3680.52999631947,
+          "check_passed": true
+        },
+        {
+          "id": 7,
+          "prompt": "List three differences between TCP and UDP.",
+          "output": "TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two different protocols used for transmitting data over a network. Here are three main differences between them:\n\n1. Connection-oriented vs Connectionless: TCP is a connection-oriented protocol, which means it establishes a connection between the sender and receiver before transmitting data. UDP, on the other hand, is a connectionless protocol, which means it does not establish a connection before transmitting data.\n\n2. Error detection and correction: TCP includes error detection and correction mechanisms, such as checksums and retransmission mechanisms, to ensure that data is transmitted correctly. UDP, on the other hand, does not include these mechanisms, which means that it is more susceptible to errors and data loss.\n\n3. Transmission speed: TCP is designed to provide reliable, ordered, and error-free data transmission, which means it can be slower than UDP in terms of transmission speed. UDP, on the other hand, is designed to provide fast, unreliable, and connectionless data",
+          "eval_count": 200,
+          "tokens_per_s": 59.471447051537524,
+          "prompt_eval_count": 37,
+          "prompt_tokens_per_s": 2288.046502999196,
+          "check_passed": null
+        },
+        {
+          "id": 8,
+          "prompt": "A train travels 60 km in 45 minutes. What is its average speed in km/h? Show brief working.",
+          "output": "To find the average speed of the train, we use the formula for average speed, which is:\n\n\\[ \\text{Average Speed} = \\frac{\\text{Total Distance}}{\\text{Total Time}} \\]\n\nGiven:\n- Total Distance = 60 km\n- Total Time = 45 minutes\n\nFirst, we need to convert the time from minutes to hours because the speed is asked in km/h. There are 60 minutes in an hour, so:\n\n\\[ 45 \\text{ minutes} = \\frac{45}{60} \\text{ hours} = \\frac{3}{4} \\text{ hours} \\]\n\nNow, we can calculate the average speed:\n\n\\[ \\text{Average Speed} = \\frac{60 \\text{ km}}{\\frac{3}{4} \\text{ hours}} \\]\n\nTo divide by a fraction, we multiply by its reciprocal:\n\n\\[ \\text{Average Speed} = 60",
+          "eval_count": 200,
+          "tokens_per_s": 59.40713216525248,
+          "prompt_eval_count": 55,
+          "prompt_tokens_per_s": 3245.986779981114,
+          "check_passed": false
+        },
+        {
+          "id": 9,
+          "prompt": "Explain what a hash table is to a 12 year old in three sentences.",
+          "output": "A hash table is like a special kind of dictionary where each word or number has a unique code. When you look up a word or number, the code helps quickly find the word or number you're looking for, just like how you might use a shortcut to find your favorite toy in a big room.",
+          "eval_count": 62,
+          "tokens_per_s": 59.654172136669374,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 2741.164119911349,
+          "check_passed": null
+        },
+        {
+          "id": 10,
+          "prompt": "Who wrote the novel 'Pride and Prejudice'? Answer in one short sentence.",
+          "output": "Jane Austen wrote the novel 'Pride and Prejudice'.",
+          "eval_count": 15,
+          "tokens_per_s": 62.984351808483254,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 2722.7435986560076,
+          "check_passed": true
+        }
+      ]
+    },
+    {
+      "model": "qwen2.5:1.5b-instruct-q4_K_M",
+      "load_seconds": 25.310166914,
+      "mean_tokens_per_s": 135.49888069898267,
+      "median_tokens_per_s": 134.7456242295573,
+      "min_tokens_per_s": 127.25661722075736,
+      "max_tokens_per_s": 150.1829111947589,
+      "total_generated_tokens": 757,
+      "auto_checks_passed": 7,
+      "auto_checks_total": 7,
+      "memory": {
+        "ollama_ps_total_gb": 1.108565032,
+        "ollama_ps_vram_gb": 1.108565032,
+        "nvidia_smi_delta_mib": 1080.0,
+        "ollama_rss_mib": 39.15234375
+      },
+      "num_ctx": 2048,
+      "num_predict": 200,
+      "prompts": [
+        {
+          "id": 1,
+          "prompt": "What is 17 * 23? Answer with just the number.",
+          "output": "391",
+          "eval_count": 4,
+          "tokens_per_s": 127.25661722075736,
+          "prompt_eval_count": 45,
+          "prompt_tokens_per_s": 4358.775668345603,
+          "check_passed": true
+        },
+        {
+          "id": 2,
+          "prompt": "What is the capital of Australia? Answer in one word.",
+          "output": "Canberra",
+          "eval_count": 3,
+          "tokens_per_s": 140.28403368099885,
+          "prompt_eval_count": 41,
+          "prompt_tokens_per_s": 3842.189110673789,
+          "check_passed": true
+        },
+        {
+          "id": 3,
+          "prompt": "Write a Python function is_prime(n) that returns True if n is a prime number.",
+          "output": "Certainly! Below is a Python function named `is_prime(n)` that checks whether a given number `n` is a prime number. A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.\n\n```python\ndef is_prime(n):\n    \"\"\"Check if a number is prime.\"\"\"\n    if n <= 1:\n        return False\n    if n <= 3:\n        return True\n    if n % 2 == 0 or n % 3 == 0:\n        return False\n    i = 5\n    while i * i <= n:\n        if n % i == 0 or n % (i + 2) == 0:\n            return False\n        i += 6\n    return True\n\n# Example usage:\nprint(is_prime(6))   # False\nprint(is_prime(7))   # True\nprint(is_prime(10))  # False\nprint(is_prime(",
+          "eval_count": 200,
+          "tokens_per_s": 132.6625929381927,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 6001.021450459652,
+          "check_passed": true
+        },
+        {
+          "id": 4,
+          "prompt": "Translate to French: 'Where is the railway station?'",
+          "output": "O\u00f9 est la gare?",
+          "eval_count": 8,
+          "tokens_per_s": 150.1829111947589,
+          "prompt_eval_count": 40,
+          "prompt_tokens_per_s": 5160.624435556702,
+          "check_passed": true
+        },
+        {
+          "id": 5,
+          "prompt": "Summarize in one sentence: The Moon orbits the Earth roughly every 27 days, and its gravity causes the ocean tides. Because the Moon is slowly moving away from Earth, days are gradually getting longer.",
+          "output": "The Moon's gravitational pull causes ocean tides, and its gradual movement away from Earth is causing days to lengthen over time.",
+          "eval_count": 27,
+          "tokens_per_s": 137.0037326378145,
+          "prompt_eval_count": 73,
+          "prompt_tokens_per_s": 9413.281753707286,
+          "check_passed": null
+        },
+        {
+          "id": 6,
+          "prompt": "Return a JSON object with the keys \"name\" and \"age\" for a person called Asha who is 30. Output only the JSON.",
+          "output": "```json\n{\n  \"name\": \"Asha\",\n  \"age\": 30\n}\n```",
+          "eval_count": 23,
+          "tokens_per_s": 138.52455495544814,
+          "prompt_eval_count": 60,
+          "prompt_tokens_per_s": 6936.416184971098,
+          "check_passed": true
+        },
+        {
+          "id": 7,
+          "prompt": "List three differences between TCP and UDP.",
+          "output": "TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two fundamental protocols in the Internet Protocol Suite, each serving different purposes and providing different levels of service. Here are three key differences between TCP and UDP:\n\n1. **Connection-oriented vs. Connectionless:**\n   - **TCP** is connection-oriented, meaning it establishes a full-duplex connection between the sender and receiver before any data is sent. This connection is maintained throughout the communication, ensuring reliable delivery of data and error correction.\n   - **UDP** is connectionless, meaning it does not establish a connection before sending data. It simply sends packets of data without any guarantees of delivery or error correction. This makes it more efficient for applications that can tolerate some loss or delay, such as video streaming or online gaming.\n\n2. **Error Handling:**\n   - **TCP** provides reliable, error-checked delivery of data. If a packet is lost or corrupted, TCP can retransmit the missing data or correct the error",
+          "eval_count": 200,
+          "tokens_per_s": 131.71317905141106,
+          "prompt_eval_count": 37,
+          "prompt_tokens_per_s": 4747.24146779574,
+          "check_passed": null
+        },
+        {
+          "id": 8,
+          "prompt": "A train travels 60 km in 45 minutes. What is its average speed in km/h? Show brief working.",
+          "output": "To find the average speed of the train, we use the formula:\n\n\\[ \\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}} \\]\n\nGiven:\n- Distance = 60 km\n- Time = 45 minutes\n\nFirst, we need to convert the time from minutes to hours because the speed is asked in km/h. There are 60 minutes in an hour, so:\n\n\\[ 45 \\text{ minutes} = \\frac{45}{60} \\text{ hours} = 0.75 \\text{ hours} \\]\n\nNow we can calculate the average speed:\n\n\\[ \\text{Average Speed} = \\frac{60 \\text{ km}}{0.75 \\text{ hours}} \\]\n\n\\[ \\text{Average Speed} = 80 \\text{ km/h} \\]\n\nSo, the average speed of the train is 80 km/h.",
+          "eval_count": 197,
+          "tokens_per_s": 130.2830971849421,
+          "prompt_eval_count": 55,
+          "prompt_tokens_per_s": 5334.109203762971,
+          "check_passed": true
+        },
+        {
+          "id": 9,
+          "prompt": "Explain what a hash table is to a 12 year old in three sentences.",
+          "output": "A hash table is like a special kind of dictionary where you can quickly find the word you're looking for. It's super fast because it uses a special code (called a hash) to find the word, just like how you might use a shortcut to find your favorite toy in a messy room. This makes it super useful for games or when you're trying to remember lots of things quickly!",
+          "eval_count": 80,
+          "tokens_per_s": 130.24943260458127,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 5904.522613065326,
+          "check_passed": null
+        },
+        {
+          "id": 10,
+          "prompt": "Who wrote the novel 'Pride and Prejudice'? Answer in one short sentence.",
+          "output": "Jane Austen wrote the novel 'Pride and Prejudice'.",
+          "eval_count": 15,
+          "tokens_per_s": 136.82865552092193,
+          "prompt_eval_count": 47,
+          "prompt_tokens_per_s": 6084.930088037287,
+          "check_passed": true
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-11-17 05:12:48"
+}

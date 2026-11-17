@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "question": "TODO: a question YOU wrote, answerable from one place in the documents",
+    "doc": "TODO: file name in docs/, e.g. lora.pdf (optional but recommended)",
+    "gold_passage": "TODO: exact text (1-3 sentences, 25-80 words) that answers it. Copy it using find_passage.py",
+    "answer": "TODO: your short reference answer in your own words"
+  }
+]

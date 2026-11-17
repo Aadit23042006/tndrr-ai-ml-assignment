@@ -1,0 +1,19 @@
+{
+  "model": "7B (Llama-2-7B shapes)",
+  "params": 6740000000.0,
+  "lora_rank": 16,
+  "lora_params": 39976960,
+  "assumed_activation_gb": 4.0,
+  "full_ft_gb": 111.84,
+  "full_ft_no_master_gb": 84.88,
+  "lora_gb": 18.11963136,
+  "qlora_gb": 8.11662886,
+  "breakdown_gb": {
+    "weights_bf16": 13.48,
+    "grads_bf16": 13.48,
+    "adam_fp32": 53.92,
+    "master_fp32": 26.96,
+    "lora_trainable_state": 0.63963136,
+    "qlora_weights_4bit": 3.4769975
+  }
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q01",
+    "question": "How does an attention function produce its output?",
+    "doc": "attention.pdf",
+    "gold_passage": "An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors. The output is computed as a weighted sum",
+    "answer": "It computes a weighted sum of values, using query-key compatibility to determine the weights."
+  },
+  {
+    "id": "q02",
+    "question": "How are the weights calculated in scaled dot-product attention?",
+    "doc": "attention.pdf",
+    "gold_passage": "The input consists of queries and keys of dimension dk, and values of dimension dv . We compute the dot products of the query with all keys, divide each by √dk, and apply a softmax function to obtain the weights on the values.",
+    "answer": "Dot products are divided by the square root of dk and passed through softmax."
+  },
+  {
+    "id": "q03",
+    "question": "What is the purpose of multi-head attention?",
+    "doc": "attention.pdf",
+    "gold_passage": "Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this.",
+    "answer": "It lets the model attend jointly to information from different representation subspaces and positions."
+  },
+  {
+    "id": "q04",
+    "question": "Why does the Transformer use positional encodings?",
+    "doc": "attention.pdf",
+    "gold_passage": "Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. To this end, we add \"positional encodings\" to the input embeddings at the bottoms of the encoder and decoder stacks.",
+    "answer": "They provide token position information because the Transformer has no recurrence or convolution."
+  },
+  {
+    "id": "q05",
+    "question": "How does BERT's masked language model objective work?",
+    "doc": "bert.pdf",
+    "gold_passage": "BERT alleviates the previously mentioned unidirectionality constraint by using a “masked language model” (MLM) pre-training objective, inspired by the Cloze task (Taylor, 1953).",
+    "answer": "It masks input tokens and trains the model to predict them using both left and right context."
+  },
+  {
+    "id": "q06",
+    "question": "What is the purpose of next sentence prediction in BERT?",
+    "doc": "bert.pdf",
+    "gold_passage": "Many important downstream tasks such as Question Answering (QA) and Natural Language Inference (NLI) are based on understanding the relationship between two sentences, which is not directly captured by language modeling. In order to train a model that understands sentence relationships, we pre-train for a binarized next sentence prediction task that can be trivially generated from any monolingual corpus.",
+    "answer": "It pretrains text-pair representations to help the model understand relationships between sentences."
+  },
+  {
+    "id": "q07",
+    "question": "How are tokens selected and replaced for BERT's MLM training?",
+    "doc": "bert.pdf",
+    "gold_passage": "The training data generator\nchooses 15% of the token positions at random for\nprediction. If the i-th token is chosen, we replace\nthe i-th token with (1) the [MASK] token 80% of\nthe time (2) a random token 10% of the time (3)\nthe unchanged i-th token 10% of the time. Then,\nTi will be used to predict the original token with\ncross entropy loss.",
+    "answer": "15% of token positions are selected; selected tokens are replaced by MASK 80%, random tokens 10%, or left unchanged 10% of the time."
+  },
+  {
+    "id": "q08",
+    "question": "What happens when BERT's next sentence prediction task is removed?",
+    "doc": "bert.pdf",
+    "gold_passage": "In Table 5, we show that removing NSP hurts performance signiﬁcantly on QNLI, MNLI, and SQuAD 1.1. Next, we evaluate the impact of training bidirectional representations by comparing “No NSP” to “LTR & No NSP”. The LTR model performs worse than the MLM model on all tasks, with large drops on MRPC and SQuAD.",
+    "answer": "Removing NSP significantly hurts performance on QNLI, MNLI, and SQuAD 1.1."
+  },
+  {
+    "id": "q09",
+    "question": "What is the central idea behind Low-Rank Adaptation?",
+    "doc": "lora.pdf",
+    "gold_passage": "We propose Low-Rank Adaptation, or LoRA, which freezes the pretrained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters for downstream tasks.",
+    "answer": "LoRA freezes pretrained weights and adds trainable low-rank matrices to Transformer layers."
+  },
+  {
+    "id": "q10",
+    "question": "What does the intrinsic rank hypothesis mean in LoRA?",
+    "doc": "lora.pdf",
+    "gold_passage": "We take inspiration from Li et al. (2018a); Aghajanyan et al. (2020) which show that the learned over-parametrized models in fact reside on a low intrinsic dimension. We hypothesize that the change in weights during model adaptation also has a low “intrinsic rank”, leading to our proposed Low-Rank Adaptation (LoRA) approach.",
+    "answer": "It proposes that weight updates during adaptation can be represented with a low intrinsic rank."
+  },
+  {
+    "id": "q11",
+    "question": "How does LoRA represent the update to a pretrained weight matrix?",
+    "doc": "lora.pdf",
+    "gold_passage": "For a pre-trained weight matrix W0 ∈ Rd×k, we constrain its update by representing the latter with a low-rank decomposition W0 + ∆W = W0 + BA, where B ∈ Rd×r,A∈ Rr×k, and the rank r ≪ min(d,k). During training, W0 is frozen and does not receive gradient updates, while A and B contain trainable parameters.",
+    "answer": "It represents the update as BA, with low-rank trainable matrices A and B while W0 remains frozen."
+  },
+  {
+    "id": "q12",
+    "question": "How does LoRA reduce the number of trainable parameters?",
+    "doc": "lora.pdf",
+    "gold_passage": "In the subsequent sections, we propose to use a low-rank representation to encode ∆Φ that is both compute- and memory-efﬁcient. When the pre-trained model is GPT-3 175B, the number of trainable parameters |Θ| can be as small as 0.01% of |Φ0|.",
+    "answer": "It uses a low-rank representation to encode parameter updates, potentially reducing trainable parameters to 0.01% of the original model."
+  },
+  {
+    "id": "q13",
+    "question": "Why does QLoRA use the NF4 data type?",
+    "doc": "qlora.pdf",
+    "gold_passage": "We term the resulting data type that has equal expected number of values in each quantization bin k-bit NormalFloat (NFk), since the data type is information-theoretically optimal for zero-centered normally distributed data.",
+    "answer": "NF4 is designed to be information-theoretically optimal for zero-centered normally distributed weights."
+  },
+  {
+    "id": "q14",
+    "question": "What is double quantization in QLoRA?",
+    "doc": "qlora.pdf",
+    "gold_passage": "We introduce Double Quantization (DQ), the process of quantizing the quantization constants for additional memory savings. While a small blocksize is required for precise 4-bit quantization [13], it also has a considerable memory overhead. For example, using 32-bit constants and a blocksize of 64 for W, quantization constants add 32/64 = 0.5 bits per parameter on average.",
+    "answer": "Double quantization quantizes the first quantization's constants to reduce memory overhead."
+  },
+  {
+    "id": "q15",
+    "question": "How do paged optimizers help prevent GPU out-of-memory errors?",
+    "doc": "qlora.pdf",
+    "gold_passage": "Paged Optimizers use the NVIDIA unified memory 3 feature wich does automatic page-to-page transfers between the CPU and GPU for error-free GPU processing in the scenario where the GPU occasionally runs out-of-memory. The feature works like regular memory paging between CPU RAM and the disk.",
+    "answer": "They use unified memory to move optimizer state between GPU and CPU RAM when GPU memory is insufficient."
+  }
+]

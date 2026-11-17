@@ -1,0 +1,19 @@
+{
+  "model": "Qwen2.5-0.5B",
+  "params": 502830976.0,
+  "lora_rank": 16,
+  "lora_params": 8798208,
+  "assumed_activation_gb": 4.0,
+  "full_ft_gb": 12.045295616,
+  "full_ft_no_master_gb": 10.033971712,
+  "lora_gb": 5.14643328,
+  "qlora_gb": 4.4001692577439995,
+  "breakdown_gb": {
+    "weights_bf16": 1.005661952,
+    "grads_bf16": 1.005661952,
+    "adam_fp32": 4.022647808,
+    "master_fp32": 2.011323904,
+    "lora_trainable_state": 0.140771328,
+    "qlora_weights_4bit": 0.259397929744
+  }
+}

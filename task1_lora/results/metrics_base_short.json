@@ -1,0 +1,43 @@
+{
+  "smoke_test": false,
+  "tag": "base_short",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "adapter": null,
+  "prompt_style": "short",
+  "overall": {
+    "n": 100,
+    "valid_json": 0.51,
+    "schema_ok": 0.0,
+    "exact_match": 0.0,
+    "field_title": 0.0,
+    "field_date": 0.04,
+    "field_time": 0.05,
+    "field_duration_minutes": 0.0,
+    "field_location": 0.16,
+    "field_attendees": 0.0
+  },
+  "in_dist": {
+    "n": 70,
+    "valid_json": 0.4857142857142857,
+    "schema_ok": 0.0,
+    "exact_match": 0.0,
+    "field_title": 0.0,
+    "field_date": 0.04285714285714286,
+    "field_time": 0.07142857142857142,
+    "field_duration_minutes": 0.0,
+    "field_location": 0.12857142857142856,
+    "field_attendees": 0.0
+  },
+  "shifted": {
+    "n": 30,
+    "valid_json": 0.5666666666666667,
+    "schema_ok": 0.0,
+    "exact_match": 0.0,
+    "field_title": 0.0,
+    "field_date": 0.03333333333333333,
+    "field_time": 0.0,
+    "field_duration_minutes": 0.0,
+    "field_location": 0.23333333333333334,
+    "field_attendees": 0.0
+  }
+}

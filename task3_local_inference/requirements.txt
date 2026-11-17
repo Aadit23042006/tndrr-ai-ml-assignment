@@ -1,0 +1,3 @@
+# Ollama itself is installed separately (https://ollama.com). Python side needs only the standard library.
+# Optional, for CPU-RAM measurement when no NVIDIA GPU is present:
+psutil

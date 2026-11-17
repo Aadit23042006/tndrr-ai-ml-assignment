@@ -1,0 +1,5 @@
+# name | url
+attention.pdf | https://arxiv.org/pdf/1706.03762
+bert.pdf | https://arxiv.org/pdf/1810.04805
+lora.pdf | https://arxiv.org/pdf/2106.09685
+qlora.pdf | https://arxiv.org/pdf/2305.14314
